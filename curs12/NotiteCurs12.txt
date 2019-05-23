@@ -1,0 +1,55 @@
+---   Curs 12   ---
+
+Interviu - Java fundamentals
+	- Spring + Videouri
+	- adnotarile de baza
+	- jpa, transactional
+
+- Spring Security
+
+- este un framework separat adiacente spring ului
+- implementezi securitatea
+- vulnerabilitati = probleme
+- a da anumite privilejii numai anumitor roluri
+- 2 operstii: autentificare si autorizare - cine si ce poate sa faca
+- simplifici implementarea lor => abstractizeaza 
+- maven - tool de build si manager de dependinte
+- creaza un user default numita user si o parola pe care o printeaza in consola
+- in bash: curl http://localhost:8080/hello
+curl -u bill http://localhost:8080/hello // bill este parola
+
+- componenta care se ocupa de managementul user ului este definit printr un contract care se numeste userdetailService
+- Interfata UserDetailService = managemetul userilor
+- Interfata UserDetail = pt user -> are authorities 
+- In spring security avem interfete => abstractizare
+
+- 3 contracte in spring securiry - userDetails - descriem user
+	- userDetailService - cauta user - incarcam user din baza
+	- grantidAuthority - rolul: manager....
+
+- mai trebuie sa spunem cum sa decodeze parola -> ea este in cripta, iar baza de date este hash uita, diferenta dintre ele este one way
+- facem asta cu passwordEncoder
+
+- clientul trebuie sa stie parola in clar, iar pe server este criptata
+- nu exista reverse la hashing
+
+- daca folosesc un alt encoder, parola trebuie sa fie si ea criptata
+- UserDetailService nu stie sa si adauge user
+- UserDetailManager - interfata care extinde pe userDetailService + reate, update, delete user
+- solid principales - set de abrevieri s = single responsabilities
+					o = open
+					l = liscov - cand abstractzezi orice implementare tre sa o folosesti - sa nu te bazezi pe ceva ce nu este in contract
+					i = segragrea interfetelor - impartirea in contracte si subcontracte
+					d = depenndency inversion - implementezi prin contract => decupleaza si separ implementarea de contract
+liscov = codul trebuie sa functionee indiferent de implementare
+
+- componente de baza pentru spring security: userDetail, passwordEncoder si configure
+
+TEMA:
+1 - Inlocuiti baza de date SQL cu Mongo
+2 - Avem o aplicatie care se conecteaza la baza de date cu jpa si avem si userii -> expune un serviciu rest si nu are spring security -> primeste username si intoarece un serdetails
+ 	- facem o alta aplicatie cu endpointuri -> are spring security si va obtine userii din cealalta aplicatie -> creem un proxy care apeleaza cealalta aplicatie -> o injectam in loc de userRepository
+ 	- fiecre aplicatie va avea portul ei
+
+
+
