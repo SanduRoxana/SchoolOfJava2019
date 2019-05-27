@@ -1,0 +1,34 @@
+---   Curs 13   ----
+
+
+- Unit test -esteaza bucati mici de cod -> o metoda
+- testele le facem pt a ne asigura ca codul este bun
+- cand rulam testele putem vedea integritatea sitemului
+- teste unitar - metode prin care testam integritatea - se comport cum vrem noi
+- mock - cream un obiect fals caruia ii dam noi un comportment
+- principiul right bicep - prin care testezi
+- right - ca metoda functioneaza cum ne asteptam
+- b - validatea range ului de valori
+- cross check - testezi rezultatul tau prin intermediul altei metode
+- performance - testez daca s fac in anumite milisecunde( timeout = 1000 in paranteza la @Test)
+
+- In ordine:
+- @BeforeClass - se apeleaza o singura data si pui resursele pe care pe folosesti pe parcurs -> creezi un obiect pe 
+- @Bfore - obiecte immutable
+- @After - putem sa dezalocam obiecte
+- @AfterClass
+
+- Bfore si after pot fi de mai multe ori
+
+- exista si teste de integrare - testezi daca mai multe componente comunica bine intre le
+- si teste de regresie - pt bug uri, vulnerabilitati de securitate..
+
+- @InjectMocks - pe clasa pe care o testam
+- @Mock - pe metodele din clasa cu InjectMocks pe care o testam
+
+- teste de integrare - verifica flow ul unei metode
+- nu se mi fac mock-uri
+- se lasa pana la ultima metoda apelata
+- testam controllerul de obicei -> daca endpointurile merg bine
+- apelam direct din codul de java endpointurile -> avem nevoie de bean
+- 
