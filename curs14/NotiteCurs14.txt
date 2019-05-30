@@ -1,0 +1,22 @@
+---  Curs 14  ---
+
+- Integrarea Springului cu Angular
+- backend
+
+- Descarcam nodeJs: https://nodejs.org/en/download/
+- Install angular : npm install -g @angular/cli in bash
+
+
+- in bash
+
+- npm -v
+- ng new angular-api
+- cd angular-api/
+- ls
+- ng serve
+
+- In folderul service
+- ng g s MyService
+
+- Swagger spring -> springframework.guru -> pentru documentatie
+
