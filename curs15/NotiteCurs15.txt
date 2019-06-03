@@ -1,0 +1,29 @@
+---    Curs15   ---- 
+
+
+- Spring MVC si scopurile lui
+
+- client  - facem request la server    - de la server primim response
+
+--------------------------
+                -DispatcherServlet - duce requestul catre un controller, controllerul ar o cale
+- server  - controllerul vorbeste cu un service ( aici tinem logica unei aplicatii), iar service ul ma departe catre repository (comuicam cu baza de date)
+          servic ul duce catre controller niste date
+
+- modelul reprezinta data pe care controllerul o cere service ul
+- view pune aceste date in parte care se vede la client
+
+- jetty creeaza un server embedded
+
+- luam date de la controller si l afisam intr-un view
+
+- In bean avem 4 scopuri ale bean-urilor: 	- singleton(by default) - un singur obiect
+						- prototype - creeaza un obiect de fiecare data - se foloseste la validari
+						- request - un bean este valabil per request - isi pastreaza atributele doar pe durata request-ului
+						- session - valabil pe o sesiune
+
+- Tema:
+- sa returneze o lista de studenti
+- Tema: sa returneze facultatea dupa numele dat
+- Sa incercam cu request si session
+- cate un exemplu pentru toate scopurile
