@@ -1,0 +1,18 @@
+---   Curs6   ---
+
+- O aplicatie care expune servicii rest si se conecteaza la o baza de date
+- Folosim sring security ca sa autorizam intr-o alta aplicatie care are baza ei de date
+- Clietul poate sa aceseze endpointurile
+
+- apeleaza serverul cu user si parola care sunt in baza de date si reurneaza un token
+- avem 2 tipuri de user: eu si aplicatia
+- aplicatia este numita client
+- refresh_token - pentru a nu retrimite userul si parola
+- clasa Optional este pentru a evita valoarea null
+- @component @repository si @service se pun pe clase, nu pe intefete
+
+
+- JWT - json web token -> pt ca 2 aplicatii sa comunice dar nu in mod direct
+- jwt.io
+
+- sa facem o aplicatie bilete la film cu tot ce am facut pana acum
