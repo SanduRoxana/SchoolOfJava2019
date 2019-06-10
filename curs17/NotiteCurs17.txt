@@ -1,0 +1,24 @@
+---   Curs 17   ----
+
+- Angular
+
+- github/adrianclaudiudima
+
+- https://nodejs.org/en/download/
+- https://cli.angular.io/
+- https://code.visualstudio.com/download
+- https://material.angular.io/
+- https://github.com/angular/flex-layout
+
+- typescript - superset al lui javascript
+- typescript opera type-safety fata de javascript
+- in app se afla aplicatiile noastre
+- entry pointul este in app.component.html
+- main -> app.module -> app.component
+- avem si teste unitare si de integrare
+- e2e este pt teste de integrare
+- ng serve -> localhost:4200
+- crtl+c pt oprire
+- ng build
+- ng build --prod
+- 
