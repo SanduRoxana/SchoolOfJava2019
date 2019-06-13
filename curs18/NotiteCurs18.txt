@@ -1,0 +1,7 @@
+---   Curs 18   ---
+
+- Aplictiile angular sunt modularizate
+- Componente - tot codul sta in componente
+- are un selector - identificator unic; are un template(view, html), si o lista de stiluri
+- componentele au lifecycle hooks: ngOnInit, ngOnDestroy...
+- o compponenta poate sa aiba mai multe proprietati - property binding
