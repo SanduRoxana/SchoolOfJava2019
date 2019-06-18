@@ -1,3 +1,5 @@
 --- Curs 19  ---
 
 - Directive - 
+
+tema: backend ul functional cu 3 movie
