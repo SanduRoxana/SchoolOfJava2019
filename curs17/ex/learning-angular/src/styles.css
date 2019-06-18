@@ -4,3 +4,9 @@
 body {
     margin:0;
 }
+
+
+.custom-class-hover {
+    border: 1px solid red;
+    margin: -1px;
+}

@@ -36,7 +36,7 @@ export class ProductCardComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        console.log('From ngOInit in Product Card')
+        console.log('From ngOnInit in Product Card')
     }
     
     ngOnChanges(changes: SimpleChanges): void {

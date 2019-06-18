@@ -8,13 +8,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductCardReferenceComponent } from './components/poduct-card-reference/product-card-reference.component';
+import { appHoverDirective } from './components/directives/app-hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShopComponent,
     ProductCardComponent,
-    ProductCardReferenceComponent
+    ProductCardReferenceComponent,
+    appHoverDirective
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,7 @@ import { ProductCardReferenceComponent } from './components/poduct-card-referenc
     MatToolbarModule,
     FlexLayoutModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

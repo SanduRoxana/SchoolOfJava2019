@@ -1,7 +1,6 @@
-<div>
-<div class="mat-title">SHOP COMPONENT</div>
+<div class="mat-title" appHover>SHOP COMPONENT</div>
 
-<div>
+<!--<div>
     Product 1 Name : {{product1Name}}
     <br>
     Product 1 Description : {{product1Description}}
@@ -19,11 +18,15 @@
     <br>
     Reference Product Price: {{mockProduct.price}}
     <button (click)="decreaseProductPrice()">Decrease Price</button>
+</div>-->
+
+<div *ngIf="listOfProducts.length == 0">
+    Loading products...
 </div>
 
-<div fxLayout="row wrap" fxLayoutAlign="start start" class="shop-container">
+<div *ngIf="listOfProducts.length > 0" fxLayout="row wrap" fxLayoutAlign="start start" class="shop-container">
 
-    <app-product-card 
+    <!--<app-product-card 
         (productDescriptioChanged)="handleProduct1DescriptionChanged($event)"
         (productNameChanged)="handleProduct1NameChanged($event)"
         [productName]="product1Name"
@@ -38,11 +41,32 @@
         [productName]="product2Name"
         [productDescription]="product2Description"
         class="card">   
-    </app-product-card>
+    </app-product-card>-->
 
-    <app-product-card-reference [product]="mockProduct" class="card">
+    <div 
+    *ngFor="
+    let product of listOfProducts; 
+    let i = index; 
+    let isEven = even; 
+    let isOdd = odd; 
+    let isFirst = first; 
+    let isLast = last" 
+    class="card">
+        <div [ngStyle]="{'font-size': (20 + i*4)+'px'}">Product index : {{i}}</div>
+        <div [ngStyle]="{'border': '1px solid', 'border-color': isEven ? 'red' : 'green'}">Is Even : {{isEven}}</div>
+        <div [ngClass]="{'is-odd': isOdd}">Is Odd : {{isOdd}}</div>
+        <div>Is First : {{isFirst}}</div>
+        <div>Is Last : {{isLast}}</div>
 
-    </app-product-card-reference>
+        <div appHover>
+            <app-product-card-reference 
+                appHover
+                [product]="product">
+            </app-product-card-reference>
+        </div>
+        
 
-</div>
+    </div>
+    
+
 </div>
