@@ -1,0 +1,44 @@
+<div class="mat-display-1">
+Movie Component
+</div>
+
+<div class="mat-body-2" fxLayout="row" fxLayoutAlign="start center">
+    <div>Method logger count : {{loggerCount}}</div>
+    <div>
+        <button mat-raised-button color="accent" (click)="refreshCount()">Reset Logger Count</button>
+    </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="loadMovies()">Load Movies</button>
+<button mat-raised-button color="primary" (click)="loadMoviesWithSubject()">Load Movies With Subject</button>
+
+<div *ngIf="allMovies.length > 0"></div>
+<div fxLayout="row wrap" fxLayoutAlign="start start" class="shop-container mat-body-1">
+    <div class="card" *ngFor="let movie of allMovies">
+        <div class="mat-body-1" style="padding: 10px">
+            <div>Movie id : {{movie.id}}</div>
+            <div>Movie title : {{movie.title}}</div>
+            <div>Movie genre : {{movie.genre}}</div>
+
+            <div fxLayout="row wrap" fxLayoutAlign="center center">
+                <button mat-raised-button>DELETE MOVIE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mat-title">Subject With Subscribe</div>
+<div *ngIf="allMoviesLoadedWithSubjectWithoutObservable.length > 0" fxLayout="row wrap" fxLayoutAlign="start start" class="shop-container mat-body-1">
+        <div class="card" *ngFor="let movie of allMoviesLoadedWithSubjectWithoutObservable">
+            <div class="mat-body-1" style="padding: 10px">
+                <div>Movie id : {{movie.id}}</div>
+                <div>Movie title : {{movie.title}}</div>
+                <div>Movie genre : {{movie.genre}}</div>
+    
+                <div fxLayout="row wrap" fxLayoutAlign="center center">
+                    <button mat-raised-button>DELETE MOVIE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,16 @@
+.shop-container {
+    background-color: lightgray;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: calc(25% - 20px);
+    background-color: lightgreen;
+    height: 350px;
+}

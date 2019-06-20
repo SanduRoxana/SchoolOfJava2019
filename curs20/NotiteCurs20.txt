@@ -1,0 +1,8 @@
+--- Curs 20  ----
+
+
+- IoC - delegi catre cineva sa faca un anumit lucru
+- 
+tema: facem o componenta car genereaza un movie randam
+facem create, delete, get all trecand prin serviciu
+create si delete in serviciu si trebuie sa incarci dupa ele

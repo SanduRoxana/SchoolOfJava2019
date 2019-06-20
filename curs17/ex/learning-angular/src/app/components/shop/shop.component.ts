@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import { Product } from '../poduct-card-reference/product.model';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
     selector: 'app-shop',
@@ -57,4 +58,7 @@ export class ShopComponent implements OnInit{
         }, 500);
     }
     
+    constructor(private movieService: MovieService) {
+        
+    }
 }
