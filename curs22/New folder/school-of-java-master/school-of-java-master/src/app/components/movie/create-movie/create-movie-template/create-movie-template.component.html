@@ -1,0 +1,43 @@
+<div style="padding: 50px; width: 500px; border-radius: 8px" class="mat-elevation-z2 mat-card">
+  <div class="mat-subheading-1">Create Movie</div>
+  <form (ngSubmit)="createMovie(movieForm)" fxLayout="column" #movieForm=ngForm>
+
+    <div class="form-group" [ngClass="{'has-warning': movieTitleFormControl.hasError('minlength')"]>
+      <label>Movie Name</label>
+      <input
+      #movieTitleFormControl=ngModel
+        [(ngModel)]="newMovie.title"
+        required
+        minlength="3"
+        name="movieTitle"
+        type="text"
+        class="form-control"
+        id="movieTitle"
+        aria-describedby="emailHelp"
+        placeholder="Movie Name ">
+      <small
+        id="movieTitleHelp"
+        class="form-text ">Movie name is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Movie genre</label>
+      <input
+        #genreFormControl=ngModel
+        required
+        [(ngModel)]="newMovie.genre"
+        name="movieGenre"
+        type="text"
+        class="form-control"
+        id="movieGenre"
+        aria-describedby="emailHelp"
+        placeholder="Movie Genre">
+      <small id="movieGenreHelp" class="form-text" *ngIf="genreFormControl.hasError('required')">
+        Movie genre is required
+      </small>
+    </div>
+    <button type="submit" class="btn btn-class" (click)="logForm(movieForm); logForm(newMovie)">Create Movie</button>
+  </form>
+
+</div>

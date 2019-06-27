@@ -1,0 +1,36 @@
+<div class="mat-title" appHover>SHOP COMPONENT</div>
+
+
+<div *ngIf="listOfProducts.length === 0 ">
+  Loading products ...
+</div>
+
+<div *ngIf="listOfProducts.length > 0" fxLayout="row wrap" fxLayoutAlign="start start" class="shop-container">
+
+  <div
+    *ngFor="
+    let product of listOfProducts;
+    let i = index;
+    let isEven = even;
+    let isOdd = odd;
+    let isFirst = first;
+    let isLast = last"
+    class="card">
+    <div [ngStyle]="{'font-size': (20 + i*4)+'px'}"> Product index : {{i}}</div>
+    <div [ngStyle]="{'border':'1px solid','border-color': isEven ? 'red' : 'green'}"> Is Even : {{isEven}}</div>
+    <div [ngClass]="{'is-odd': isOdd}">Is Odd : {{isOdd}}</div>
+    <div>Is First : {{isFirst}}</div>
+    <div>Is Last : {{isLast}}</div>
+
+    <div appHover>
+      <app-product-card-reference
+        [product]="product">
+      </app-product-card-reference>
+    </div>
+
+  </div>
+
+
+</div>
+
+

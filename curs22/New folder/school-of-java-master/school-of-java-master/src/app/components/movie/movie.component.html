@@ -1,0 +1,45 @@
+<div class="shop-container">
+
+  <div class="mat-display-1">
+    Movie Component
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center" *ngIf="!(allMovies$ | async) as movies">
+
+    <div fxLayout="column" class="mat-card" style="padding: 60px; border-radius: 8px;">
+      <div class="mat-display-1" style="margin-bottom: 24px;">
+        Missing movies ...
+      </div>
+      <button mat-raised-button color="primary" (click)="loadMovies()"> Load Movies</button>
+    </div>
+
+
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="start start" class=" mat-body-1">
+    <div class="card" *ngFor="let movie of allMovies$ | async">
+      <div class="mat-body-1" style="padding: 10px">
+
+        <div>Movie id : {{movie.id}}</div>
+        <div>Movie name : {{movie.title}}</div>
+        <div>Movie genre : {{movie.genre}}</div>
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <button mat-raised-button (click)="deleteMovie(movie.id)">DELETE MOVIE</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 100px;">
+    <app-create-movie-template></app-create-movie-template>
+
+  </div>
+
+</div>
+
+
+
+

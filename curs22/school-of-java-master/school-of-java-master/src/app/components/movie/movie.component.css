@@ -1,0 +1,17 @@
+.shop-container {
+  background-color: rgba(128, 128, 128, 0.26);
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+
+.card {
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #a9d2c5;
+  width: calc(25% - 20px);
+  height: 350px;
+}

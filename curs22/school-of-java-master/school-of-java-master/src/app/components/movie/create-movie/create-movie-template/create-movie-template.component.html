@@ -1,0 +1,20 @@
+<div style="padding: 50px; width: 50px; border-radius: 8px" class="mat-elevation-z2 mat-card">
+    <div class="mat-subheading-1">Create Movie</div>
+      <form fxLayout="column" #movieForm=ngForm>
+        <input
+        required
+        type="text"
+        name="movieName"
+        [(ngModel)]="newMovie.title"
+        >
+        <input
+        required
+        type="text"
+        name="movieGenre"
+        [(ngModel)]="newMovie.genre"
+        >
+        <button (click)="logForm(movieForm); logForm(newMovie)">Log Form</button>
+      </form>
+    
+  
+  </div>
