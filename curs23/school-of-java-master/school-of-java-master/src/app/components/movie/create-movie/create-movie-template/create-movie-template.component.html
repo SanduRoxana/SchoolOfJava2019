@@ -1,0 +1,55 @@
+<div style="padding: 50px; width: 500px; border-radius: 8px" class="mat-elevation-z2 mat-card">
+  <div class="mat-subheading-1">Create Movie Template Driven Approach</div>
+  <form (ngSubmit)="createMovie(movieForm)" fxLayout="column" #movieForm=ngForm>
+
+    <div class="form-group"
+         [ngClass]="{'has-warning':movieTitleFormControl.hasError('minlength') && movieTitleFormControl.dirty,
+         'has-danger':movieTitleFormControl.hasError('required') && movieTitleFormControl.dirty,
+         'has-success':movieTitleFormControl.valid}">
+      <label>Movie Name</label>
+      <input
+        #movieTitleFormControl=ngModel
+        [(ngModel)]="newMovie.title"
+        required
+        minlength="3"
+        name="movieTitle"
+        type="text"
+        class="form-control"
+        id="movieTitle"
+        aria-describedby="emailHelp"
+        placeholder="Movie Name ">
+      <div class="form-control-feedback">
+        <span
+          *ngIf="movieTitleFormControl.hasError('required') && movieTitleFormControl.dirty">Movie name is required.</span>
+        <span
+          *ngIf="movieTitleFormControl.hasError('minlength') && movieTitleFormControl.dirty">Movie min length is 3</span>
+        <span
+          *ngIf=movieTitleFormControl.valid>Movie name valid. </span>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Movie genre</label>
+      <input
+        #genreFormControl=ngModel
+        required
+        [(ngModel)]="newMovie.genre"
+        name="movieGenre"
+        type="text"
+        class="form-control"
+        id="movieGenre"
+        aria-describedby="emailHelp"
+        placeholder="Movie Genre">
+      <small
+        id="movieGenreHelp"
+        class="form-text"
+        *ngIf="genreFormControl.hasError('required') && genreFormControl.dirty">
+        Movie genre is required
+      </small>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="logForm(movieForm); logForm(newMovie)">Create Movie</button>
+  </form>
+
+</div>

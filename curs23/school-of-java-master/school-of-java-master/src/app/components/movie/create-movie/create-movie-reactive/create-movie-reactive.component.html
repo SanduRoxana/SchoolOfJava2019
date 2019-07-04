@@ -1,0 +1,38 @@
+<div style="padding: 50px; width: 500px; border-radius: 8px" class="mat-elevation-z2 mat-card">
+  <div class="mat-subheading-1">Create Movie Reactive Driven Approach</div>
+  <form fxLayout="column" [formGroup]="movieForm" (ngSubmit)="createMovie()">
+
+    <div class="form-group"
+         [ngClass]="{'has-warning':movieForm.get('name').hasError('minlength') && movieForm.get('name').dirty,
+         'has-danger':movieForm.get('name').hasError('required') && movieForm.get('name').dirty,
+         'has-success':movieForm.get('name').valid}">
+      <label>Movie Name</label>
+      <input formControlName="name"
+             type="text"
+             class="form-control"
+             placeholder="Movie Name ">
+      <div class="form-control-feedback">
+        <span *ngIf="movieForm.get('name').hasError('required') && movieForm.get('name').dirty">Movie name is required.</span>
+        <span *ngIf="movieForm.get('name').hasError('minlength') && movieForm.get('name').dirty">Movie min length is 3</span>
+        <span *ngIf="movieForm.get('name').valid">Movie name valid.</span>
+        <span *ngIf="movieForm.hasError('forbiddenFormValue') && movieForm.dirty">Movie name matches the Movie genre and it is not allwed.</span>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Movie genre</label>
+      <input
+        formControlName="genre"
+        type="text"
+        class="form-control"
+        placeholder="Movie Genre">
+      <small
+        class="form-text"
+        *ngIf="false">
+        Movie genre is required
+      </small>
+    </div>
+    <button type="submit" class="btn btn-success">Create Movie</button>
+  </form>
+</div>
